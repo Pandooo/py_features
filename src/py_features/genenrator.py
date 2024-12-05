@@ -45,6 +45,8 @@ class FeatureGenerator:
 
         if path is not None:
             self.path = path
+        if os.path.exists(self.path):
+            os.makedirs(self.path, exist_ok=True)
 
     def __call__(self, save: bool = True, save_method: str = 'replace',
                  aggregate_len: int = None, start_time: str = None, end_time: str = None, start_hour: int = 1):
